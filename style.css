@@ -22,6 +22,7 @@ body {
     height: calc(100vh - 64px);  /* repli pour les anciens navigateurs */
     height: calc(100dvh - 64px); /* 100% de l'écran moins les 2 marges de 32px */
     overflow: hidden;            /* rien ne dépasse de la fenêtre, coins arrondis respectés */
+    position: relative;          /* repère pour la fenêtre du formulaire */
  
     /* Le body organise ses enfants en colonne : header en haut, main prend le reste */
     display: flex;
@@ -54,7 +55,7 @@ body {
     margin-right: 10px;
 }
 
-.circle button, .circle button, .circle button {
+.circle button {
     border: none;
     border-radius: 200px;
     height: 25px;
@@ -111,7 +112,144 @@ body {
     width: 67vw;
 }
 
+/* ===== Formulaire de contact : fenêtre modale ===== */
+
 .forms {
+    display: none;              /* caché par défaut, affiché via la classe .open */
+    position: absolute;
+    inset: 0;                   /* couvre tout le body */
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.forms.open {
+    display: flex;
+    animation: fade-in .2s ease-out;
+}
+
+.forms.open .form-window {
+    animation: pop-in .3s cubic-bezier(.2, .8, .2, 1);
+}
+
+.form-window {
+    display: flex;
+    flex-direction: column;
+    width: min(520px, 100%);
+    max-height: 100%;
+    overflow: hidden;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.form-title {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none; 
+}
+
+#contact-form::-webkit-scrollbar {
+    display: none;                   /* Chrome, Safari, Edge */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    outline: none;
+    transition: border-color .25s, background .25s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    scrollbar-width: none;
+}
+
+.form-group textarea::-webkit-scrollbar {
     display: none;
 }
 
+#contact-submit {
+    align-self: flex-end;
+    min-height: 35px;
+    padding: 0 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+
+#contact-submit:hover:not(:disabled) { transform: scale(1.04); }
+#contact-submit:active:not(:disabled) { transform: scale(0.96); }
+#contact-submit:disabled { opacity: .6; cursor: wait; }
+
+#contact-status {
+    margin: 0;
+    min-height: 1.2em;
+    font-size: 14px;
+}
+
+#contact-status.error   { color: #ffb3b3; }
+#contact-status.success { color: #b8ffcf; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop-in  { from { opacity: 0; transform: scale(.94) translateY(10px); } to { opacity: 1; transform: none; } }
