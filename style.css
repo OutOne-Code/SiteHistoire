@@ -1,0 +1,117 @@
+*, *::before, *::after {
+    box-sizing: border-box; /* faire en sorte que le padding et la bordure soient inclus dans les dimensions définies d'un élément */
+    font-family: 'Chillax', sans-serif !important; /* !!! ENLEVER POUR APPELER FONT AWESOME 6 FREE !!! */
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url('wallpaper_earth_night.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    /* Dimensions : le body (block) prend naturellement la largeur disponible
+       moins les marges, donc pas besoin de width. */
+    margin: 32px;
+    height: calc(100vh - 64px);  /* repli pour les anciens navigateurs */
+    height: calc(100dvh - 64px); /* 100% de l'écran moins les 2 marges de 32px */
+    overflow: hidden;            /* rien ne dépasse de la fenêtre, coins arrondis respectés */
+ 
+    /* Le body organise ses enfants en colonne : header en haut, main prend le reste */
+    display: flex;
+    flex-direction: column;
+ 
+    /* Apparence de fenêtre */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+ 
+    /* Transparence et flou */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex: 0 0 64px; /* hauteur fixe de 64px, ne rétrécit pas */
+    /* plus de width: 100vw : le header prend la largeur du body, la bordure ne dépasse plus */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.circle button, .circle button, .circle button {
+    border: none;
+    border-radius: 200px;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.idcodiv {
+    margin-left: auto;
+    gap: 20px;
+    display: flex;
+}
+
+.header button:not(.circle button) {
+    color: white;
+    height: 35px;
+    width: 135px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    transition: transform .25s cubic-bezier(.2, .8, .2, 1);
+}
+
+.header button:not(.circle button):hover {
+    transform: scale(1.04);
+}
+
+.header button:not(.circle button):active {
+    transform: scale(0.96);
+}
+
+.main {
+    display: flex;
+    flex: 1;       /* prend toute la hauteur restante sous le header */
+    min-height: 0; /* autorise le rétrécissement au lieu de déborder */
+}
+ 
+.summary {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 25%; /* 25% de la largeur du .main (et non de l'écran) */
+    min-width: 0;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    /* plus de height: calc(100vh - 64px) : le flex étire la colonne à la hauteur du .main */
+}
+
+.content {
+    width: 67vw;
+}
+
+.forms {
+    display: none;
+}
+
