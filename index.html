@@ -15,7 +15,7 @@
             <div class="circle"><button></button></div>
             <div class="circle"><button></button></div>
             <div class="idcodiv">
-                <button onclick="contactus()" id="connection">Nous contacter</button>
+                <button type="button" onclick="contactus()" id="connection">Nous contacter</button>
             </div>
         </div>
 
@@ -29,7 +29,17 @@
 
             </div>
 
-            <div class="forms">
+            <div class="forms" id="contact-overlay" aria-hidden="true">
+
+                <div class="form-window" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+
+                    <div class="form-header">
+                        <div class="circle"><button type="button" onclick="closeContact()" aria-label="Fermer"></button></div>
+                        <div class="circle"><button type="button" tabindex="-1" aria-hidden="true"></button></div>
+                        <div class="circle"><button type="button" tabindex="-1" aria-hidden="true"></button></div>
+                        <span class="form-title" id="contact-title">Nous contacter</span>
+                    </div>
+
                 
                 <form id="contact-form">
                 
@@ -87,6 +97,8 @@
                     <p id="contact-status" role="status" aria-live="polite"></p>
                 
                 </form>
+
+                </div>
 
             </div>
 
