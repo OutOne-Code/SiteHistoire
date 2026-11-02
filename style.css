@@ -268,10 +268,14 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.15) inset !important;
     box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.15) inset !important;
     -webkit-text-fill-color: white !important;
