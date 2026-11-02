@@ -1,6 +1,9 @@
 *, *::before, *::after {
     box-sizing: border-box; /* faire en sorte que le padding et la bordure soient inclus dans les dimensions définies d'un élément */
-    font-family: 'Chillax', sans-serif !important; /* !!! ENLEVER POUR APPELER FONT AWESOME 6 FREE !!! */
+}
+
+body, button, input, textarea {
+    font-family: 'Chillax', sans-serif;
 }
 
 html {
@@ -63,6 +66,51 @@ body {
     background-color: rgba(0, 0, 0, 0.15);
 }
 
+#searchArticleDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-height: 35px;
+    min-width: 0;
+    margin-right: 15px;
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    padding-left: 10px;
+}
+
+#searchArticle {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 35px;
+    padding: 0;
+    color: white;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+#searchArticleDiv i {
+    flex-shrink: 0;
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+}
+
+#searchArticle::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
 .idcodiv {
     margin-left: auto;
     gap: 20px;
@@ -74,13 +122,13 @@ body {
     height: 35px;
     width: 135px;
     border-radius: 10px;
-    cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.25);
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     font-size: 16px;
+    cursor: pointer;
     transition: transform .25s cubic-bezier(.2, .8, .2, 1);
 }
 
@@ -100,10 +148,11 @@ body {
  
 .summary {
     display: flex;
+    position: relative;
     justify-content: center;
     flex: 0 0 25%; /* 25% de la largeur du .main (et non de l'écran) */
     min-width: 0;
-    overflow: hidden;
+    overflow: visible;
     border-right: 1px solid rgba(255, 255, 255, 0.25);
     /* plus de height: calc(100vh - 64px) : le flex étire la colonne à la hauteur du .main */
 }
