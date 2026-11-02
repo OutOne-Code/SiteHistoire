@@ -264,7 +264,7 @@ body {
 }
 
 .form-group input:not(:focus),
-.form-group textarea:focus {
+.form-group textarea:not(:focus) {
     background-color: rgba(255, 255, 255, 0.15);
 
 .form-group textarea {
