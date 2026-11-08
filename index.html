@@ -25,11 +25,16 @@
        <meta property="og:url"
               content="https://passedecompose.vercel.app/">
     
-       <meta property="og:image"
-              content="https://passedecompose.vercel.app/logo.png">
+       <meta property="og:image" content="https://passedecompose.vercel.app/logo.png">
+       <meta property="og:image:secure_url" content="https://passedecompose.vercel.app/logo.png">
+       <meta property="og:image:type" content="image/png">
+       <meta property="og:image:width" content="1200">
+       <meta property="og:image:height" content="630">
+       <meta property="og:image:alt" content="Logo de Passé Décomposé">
     
         <!-- Twitter / X -->
         <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image:alt" content="Logo de Passé Décomposé">
     
         <meta name="twitter:title"
               content="Passé Décomposé">
@@ -41,7 +46,7 @@
               content="https://passedecompose.vercel.app/logo.png">
     
         <!-- Icône du site -->
-        <link rel="icon" href="/logo.png">
+        <link rel="icon" href="logo.png">
         <link href="https://api.fontshare.com/css?f[]=chillax@200,300,400,500,600,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link rel="stylesheet" href="style.css">
@@ -54,10 +59,6 @@
             <div class="circle"><button></button></div>
             <div class="circle"><button></button></div>
             <div class="circle"><button></button></div>
-            <div id="searchArticleDiv">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchArticle" placeholder="Chercher un article...">
-            </div>
             <div class="idcodiv">
                 <button type="button" onclick="contactus()" id="connection">Nous contacter</button>
             </div>
@@ -67,17 +68,23 @@
 
             <div class="summary">
 
+                <select name="classementArticles" id="classementArticles">
+                    <option value="older">Plus anciens</option>
+                    <option value="newer">Plus récents</option>
+                    <option value="alpha">Ordre alphabétique</option>
+                    <option value="recentlySee">Consultés récemment</option>
+                </select>
+
+                <div id="articles">
+
+                </div>
+
             </div>
 
             <div class="content">
-                <div id="updatePage">
-
-                </div>
-                <div id="searchPage">
-
-                </div>
-                <div id="articlePage">
-
+                <div id="searchArticleDiv">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchArticle" placeholder="Chercher un article...">
                 </div>
             </div>
 
