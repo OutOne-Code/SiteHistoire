@@ -24,6 +24,10 @@
         { "type": "paragraphe", "texte": "Jean-Claude Bonhomme, Jean-Paul Nicolas, Jean-Pierre Besse"},
         { "type": "paragraphe", "texte": "Ce texte élaboré, il y a plusieurs années a été revu dans sa rédaction. Des images y ont été ajoutées."},
         { "type": "paragraphe", "texte": "Jean-Claude BONHOMME, 1er Novembre 2025"},
-        { "type": "paragraphe", "texte": "[1] Lucien Bialé, adhère au Front National (Mouvement de Résistance créé par le Parti Communiste) en novembre 1941 et passe au FTP où il est chargé du recrutement. Voir le site du Maitron : https://fusilles-40-44.maitron.fr/biale-lucien/\n[2] Tous sont des leaders du parti Communiste ; la plus connue étant Marie Paule Couturier qui témoignera au Procès de Nüremberg, à sa sortie de déportation.\n[3] Responsable interdépartemental des jeunes du Front National.\n[4] http://www.bddm.org/liv/index_liv.php. On peut également suivre son parcours en Déportation en se connectant sur la Mémorial virtuel des déportés de Loire-Inférieure : https://afmd44.org/deporte/GUEGAN_Felix/\n[5] Un Kommando peut comprendre un nombre très variable de personnes qui sont affecté à des tâches très diverses. Certains sont très meurtriers (jusqu’à 80% de décès), d’autres sont moins dangereux."}
+        { "type": "paragraphe", "texte": "[1] Lucien Bialé, adhère au Front National (Mouvement de Résistance créé par le Parti Communiste) en novembre 1941 et passe au FTP où il est chargé du recrutement. Voir le site du Maitron : https://fusilles-40-44.maitron.fr/biale-lucien/"},
+        { "type": "paragraphe", "texte": "[2] Tous sont des leaders du parti Communiste ; la plus connue étant Marie Paule Couturier qui témoignera au Procès de Nüremberg, à sa sortie de déportation."},
+        { "type": "paragraphe", "texte": "[3] Responsable interdépartemental des jeunes du Front National."},
+        { "type": "paragraphe", "texte": "[4] http://www.bddm.org/liv/index_liv.php. On peut également suivre son parcours en Déportation en se connectant sur la Mémorial virtuel des déportés de Loire-Inférieure : https://afmd44.org/deporte/GUEGAN_Felix/"},
+        { "type": "paragraphe", "texte": "[5] Un Kommando peut comprendre un nombre très variable de personnes qui sont affecté à des tâches très diverses. Certains sont très meurtriers (jusqu’à 80% de décès), d’autres sont moins dangereux."}
     ]
 }
